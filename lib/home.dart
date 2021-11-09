@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 // Cards - Pages
@@ -13,6 +14,40 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void initState() {
+    super.initState();
+
+    // When the app is in the background, and closed and user
+    // taps on the notification it will open an app
+    FirebaseMessaging.instance.getInitialMessage().then((message) {
+      if (message != null) {
+        print("App is closed, but user tapped on the notification");
+        setState(() {
+          _selectedIndex = int.parse(message.data['screen_num']);
+        });
+      }
+    });
+
+    // Foreground work. On opened app, subscribe the widget to the FB Notifications
+    FirebaseMessaging.onMessage.listen((message) {
+      if (message.notification != null) {
+        print("App is working on the foreground");
+        print(message.notification!.body);
+        print(message.notification!.title);
+      }
+    });
+
+    // When the app is in the background, but opened and user
+    // taps on the notification
+    FirebaseMessaging.onMessageOpenedApp.listen((message) {
+      print(
+          'App is working on the background and user tapped on the notification');
+      setState(() {
+        _selectedIndex = int.parse(message.data['screen_num']);
+      });
+    });
+  }
+
   // selected Widget
   int _selectedIndex = 0;
 
