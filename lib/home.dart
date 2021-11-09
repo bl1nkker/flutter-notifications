@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_notifications/services/local_notifications_service.dart';
 
 // Cards - Pages
 import 'card1.dart';
@@ -14,17 +15,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
   void initState() {
     super.initState();
+    LocalNotificationsService.initialize(onNotificationTapped);
 
     // When the app is in the background, and closed and user
     // taps on the notification it will open an app
     FirebaseMessaging.instance.getInitialMessage().then((message) {
       if (message != null) {
         print("App is closed, but user tapped on the notification");
-        setState(() {
-          _selectedIndex = int.parse(message.data['screen_num']);
-        });
+        onNotificationTapped(message.data['screen_num']);
       }
     });
 
@@ -34,6 +35,7 @@ class _HomeState extends State<Home> {
         print("App is working on the foreground");
         print(message.notification!.body);
         print(message.notification!.title);
+        LocalNotificationsService.displayNotification(message);
       }
     });
 
@@ -42,9 +44,7 @@ class _HomeState extends State<Home> {
     FirebaseMessaging.onMessageOpenedApp.listen((message) {
       print(
           'App is working on the background and user tapped on the notification');
-      setState(() {
-        _selectedIndex = int.parse(message.data['screen_num']);
-      });
+      onNotificationTapped(message.data['screen_num']);
     });
   }
 
@@ -62,6 +62,12 @@ class _HomeState extends State<Home> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+    });
+  }
+
+  void onNotificationTapped(String route) {
+    setState(() {
+      _selectedIndex = int.parse(route);
     });
   }
 
