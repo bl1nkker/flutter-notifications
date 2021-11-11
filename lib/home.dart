@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Fooderlich',
+        title: Text('ゆっくり死ぬ',
             // 2
             style: Theme.of(context).textTheme.headline6),
       ),
@@ -90,16 +90,16 @@ class _HomeState extends State<Home> {
         onTap: _onItemTapped,
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card',
+            icon: Icon(Icons.audiotrack_outlined),
+            label: 'Music',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card2',
+            icon: Icon(Icons.image_outlined),
+            label: 'Tokio',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
-            label: 'Card3',
+            icon: Icon(Icons.star_border_outlined),
+            label: 'Trends',
           ),
         ],
       ),

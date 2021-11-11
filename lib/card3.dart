@@ -41,7 +41,7 @@ class Card3 extends StatelessWidget {
                     size: 40,
                   ),
                   const SizedBox(height: 8),
-                  Text('Recipe Trends',
+                  Text('Current Trends',
                       style: FooderlichTheme.darkTextTheme.headline2),
                   const SizedBox(height: 30),
                 ],
@@ -59,7 +59,7 @@ class Card3 extends StatelessWidget {
                 children: [
                   // Chip widgets, which display recipe attributes like Healthy or Vegan.
                   Chip(
-                    label: Text('Healthy',
+                    label: Text('Holding Hands',
                         style: FooderlichTheme.darkTextTheme.bodyText1),
                     backgroundColor: Colors.black.withOpacity(0.7),
                     onDeleted: () {
@@ -70,12 +70,51 @@ class Card3 extends StatelessWidget {
                     label: Text('Vegan',
                         style: FooderlichTheme.darkTextTheme.bodyText1),
                     backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+
+                  Chip(
+                    label: Text('Kisses',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
                     onDeleted: () {
                       print('delete');
                     },
                   ),
                   Chip(
-                    label: Text('Carrots',
+                    label: Text('Games',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Anime',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Eco-life',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('BLM',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Hugs',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    onDeleted: () {
+                      print('delete');
+                    },
+                  ),
+                  Chip(
+                    label: Text('Gender Equality',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Memes about America',
                         style: FooderlichTheme.darkTextTheme.bodyText1),
                     backgroundColor: Colors.black.withOpacity(0.7),
                   ),

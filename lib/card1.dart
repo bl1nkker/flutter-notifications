@@ -5,10 +5,10 @@ import 'fooderlich_theme.dart';
 class Card1 extends StatelessWidget {
   const Card1({Key? key}) : super(key: key);
   // 1
-  final String category = 'Editor\'s Choice';
-  final String title = 'The Art of Dough';
-  final String description = 'Learn to make the perfect bread.';
-  final String chef = 'Ray Wenderlich';
+  final String category = 'twenty one pilots';
+  final String title = 'Truce';
+  final String description = '"I hope I\'m not my only friend"';
+  final String chef = 'Tyler Joseph';
 
   // Always override build method!
   @override

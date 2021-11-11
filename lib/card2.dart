@@ -30,8 +30,8 @@ class Card2 extends StatelessWidget {
           children: [
             // Author Container
             const AuthorCard(
-              authorName: 'Mike Katz',
-              title: 'Smoothie Connoisseur',
+              authorName: 'Madina Zhunusova',
+              title: 'Tokio Co-Founder',
               imageProvider: AssetImage('assets/author_katz.png'),
             ),
             // Main content
@@ -45,8 +45,8 @@ class Card2 extends StatelessWidget {
                     bottom: 16,
                     right: 16,
                     child: Text(
-                      'Recipe',
-                      style: FooderlichTheme.lightTextTheme.headline1,
+                      'Passion',
+                      style: FooderlichTheme.darkTextTheme.headline1,
                     ),
                   ),
                   // Finally, position the second text 70 pixels from the bottom and 16 pixels from the left.
@@ -57,8 +57,8 @@ class Card2 extends StatelessWidget {
                     child: RotatedBox(
                       quarterTurns: 3,
                       child: Text(
-                        'Smoothies',
-                        style: FooderlichTheme.lightTextTheme.headline1,
+                        'Aesthetics',
+                        style: FooderlichTheme.darkTextTheme.headline1,
                       ),
                     ),
                   ),
