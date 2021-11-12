@@ -10,6 +10,7 @@ void main() async {
   // Firebase init
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(backgroundNotificationHandler);
+  print('Firebase Init');
   runApp(const Fooderlich());
 }
 

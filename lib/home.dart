@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+    print('Firebase Notif Start');
     LocalNotificationsService.initialize(onNotificationTapped);
 
     // When the app is in the background, and closed and user
@@ -46,6 +47,7 @@ class _HomeState extends State<Home> {
           'App is working on the background and user tapped on the notification');
       onNotificationTapped(message.data['screen_num']);
     });
+    print('Firebase Notif End');
   }
 
   // selected Widget
